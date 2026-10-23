@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="text-start">
+    <h1 class="display-4">Pedidos</h1>
+</div>
+<div class="text-center">
+<ul class="list-group text-start">
+    @for (int i = 0; i < Model.Client.Count; i++)
+    {
+        if (i == 0)
+        {
+        <div class="card">
+            <div class="card-header bg-success fg-contrast-success">
+                <h2 class="bg-inverse fg-contrast-inverse">
+                    Concluído</h2>
+            </div>
+            <div class="card-body">
+                <figure>
+                <blockquote class="blockquote">
+                    <p>A well-known quote, contained in a blockquote element.</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    Someone famous in <cite title="Source Title">Source Title</cite>
+                </figcaption>
+                </figure>
+            </div>
+        </div>
+        }
+        if (i==1)
+        {
+            <li class="list-group-item">
+                @Model.Client[i]
+            </li>
+        }
+    }
+</ul>
+</div>
