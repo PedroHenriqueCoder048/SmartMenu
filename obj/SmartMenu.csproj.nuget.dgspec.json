@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/SmartMenu/SmartMenu.csproj": {}
+    "C:\\Users\\Anne Santos\\OneDrive\\Documentos\\pedro\\SmartMenu\\SmartMenu.csproj": {}
   },
   "projects": {
-    "/workspaces/SmartMenu/SmartMenu.csproj": {
+    "C:\\Users\\Anne Santos\\OneDrive\\Documentos\\pedro\\SmartMenu\\SmartMenu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/SmartMenu/SmartMenu.csproj",
+        "projectUniqueName": "C:\\Users\\Anne Santos\\OneDrive\\Documentos\\pedro\\SmartMenu\\SmartMenu.csproj",
         "projectName": "SmartMenu",
-        "projectPath": "/workspaces/SmartMenu/SmartMenu.csproj",
-        "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/SmartMenu/obj/",
+        "projectPath": "C:\\Users\\Anne Santos\\OneDrive\\Documentos\\pedro\\SmartMenu\\SmartMenu.csproj",
+        "packagesPath": "C:\\Users\\Anne Santos\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anne Santos\\OneDrive\\Documentos\\pedro\\SmartMenu\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/codespace/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Anne Santos\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
