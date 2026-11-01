@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartMenu")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42fb6b7d0ddede9288382c8a1ff60058a1d07e82")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45028fc363c6b80b7b9fe7288d13b68a7f397849")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartMenu")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartMenu")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

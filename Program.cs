@@ -1,9 +1,19 @@
+using Microsoft.EntityFrameworkCore;
+using SmartMenu.Data;
+using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite(
+        builder.Configuration.GetConnectionString("AppDbContext")
+    ));
+
 var app = builder.Build();
+
+app.UseStaticFiles(); 
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -12,6 +22,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
 
 app.UseHttpsRedirection();
 

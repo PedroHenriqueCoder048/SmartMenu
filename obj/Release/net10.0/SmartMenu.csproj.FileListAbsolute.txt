@@ -1,0 +1,9 @@
+/workspaces/SmartMenu/obj/Release/net10.0/rpswa.dswa.cache.json
+/workspaces/SmartMenu/obj/Release/net10.0/SmartMenu.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/SmartMenu/obj/Release/net10.0/SmartMenu.AssemblyInfoInputs.cache
+/workspaces/SmartMenu/obj/Release/net10.0/SmartMenu.AssemblyInfo.cs
+/workspaces/SmartMenu/obj/Release/net10.0/SmartMenu.csproj.CoreCompileInputs.cache
+/workspaces/SmartMenu/obj/Release/net10.0/SmartMenu.MvcApplicationPartsAssemblyInfo.cache
+/workspaces/SmartMenu/obj/Release/net10.0/SmartMenu.RazorAssemblyInfo.cache
+/workspaces/SmartMenu/obj/Release/net10.0/SmartMenu.RazorAssemblyInfo.cs
+/workspaces/SmartMenu/obj/Release/net10.0/SmartMenu.sourcelink.json
