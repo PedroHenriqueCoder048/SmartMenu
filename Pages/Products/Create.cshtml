@@ -51,7 +51,8 @@
                 <span asp-validation-for="Product.Quantity" class="text-danger"></span>
             </div>
             <div class="form-group mb-3">
-                <input type="submit" value="Cadastra" class="btn btn-success" />
+                <input type="submit" asp-page-handler="Save" value="Cadastra" class="btn btn-success" />
+                <input type="submit" asp-page-handler="SaveAndContinue" value="Salvar e Criar Novo" class="btn btn-info" asp-page="."/>
             </div>
         </form>
     </div>

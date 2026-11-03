@@ -24,10 +24,10 @@ namespace SmartMenu.Pages.Products
         }
 
         [BindProperty]
-        public Product Product { get; set; } = default!;
+        public Product Product { get; set; } = new Product();
 
         // For more information, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostSaveAsync()
         {
             if (!ModelState.IsValid)
             {
@@ -38,6 +38,24 @@ namespace SmartMenu.Pages.Products
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
+        }
+
+        public async Task<IActionResult> OnPostSaveAndContinueAsync()
+        {
+             if (!ModelState.IsValid)
+                {
+                    return Page();
+                }
+
+            _context.Products.Add(Product);
+            
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] =
+                "Produto salvo com sucesso! Formulário pronto para novo cadastro.";
+
+            return RedirectToPage("./Create");
+
         }
     }
 }

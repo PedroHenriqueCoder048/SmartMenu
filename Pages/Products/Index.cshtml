@@ -69,11 +69,16 @@
 <div class="row">
     @foreach (var product in Model.Product)
             {
-                <div class="col-md-4">
+                <div class="form-group col-md-3 mb-4 mx-1 border rounded">
+                    <img src="..." class="rounded mx-auto d-block" alt="...">
                     <h3>@product.Name</h3>
                     <p>@product.UnitPrice</p>
+                    <input class="form-control mb-3" type="number"/>
                 </div>
             }
+         <div class="form-group mb-3">
+                <input type="submit" asp-page-handler="Save" value="Finalizar" class="btn btn-success" />
         </div>
+    </div>
 </body>
 </html>
