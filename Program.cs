@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using SmartMenu.Data;
 using Microsoft.Extensions.DependencyInjection;
+using System.IO;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -23,6 +25,13 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+string DbPathFile =   Path.Combine(Directory.GetCurrentDirectory(), "SmartMenu.db");
+
+if (!File.Exists(DbPathFile))
+{
+    // Cria um arquivo totalmente em branco e fecha o manipulador imediatamente
+    File.Create(DbPathFile).Dispose(); 
+}
 
 app.UseHttpsRedirection();
 

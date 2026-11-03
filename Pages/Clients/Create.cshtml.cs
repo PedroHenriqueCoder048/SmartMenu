@@ -37,7 +37,7 @@ namespace SmartMenu.Pages.Clients
             _context.Client.Add(Client);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Products/Index");
         }
     }
 }

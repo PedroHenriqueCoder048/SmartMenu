@@ -2,7 +2,8 @@
 @model SmartMenu.Pages.Products.IndexModel
 
 @{
-    Layout = null;
+    Layout = "_Layout";
+    ViewData["Title"] = "Cardápio";
 }
 
 <!DOCTYPE html>
@@ -13,10 +14,11 @@
     <title>Index</title>
 </head>
 <body>
+    <h4>Cardápio</h4>
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Adicionar Produto</a>
 </p>
-<table class="table">
+@* <table class="table">
     <thead>
         <tr>
             <th>
@@ -56,13 +58,22 @@
                 @Html.DisplayFor(modelItem => item.Quantity)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                <a class="btn btn-warning" asp-page="./Details" asp-route-id="@item.Id">Detalhar</a> |
+                <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.Id">Deletar</a>
             </td>
         </tr>
 }
     </tbody>
-</table>
+</table> *@
+<div class="row">
+    @foreach (var product in Model.Product)
+            {
+                <div class="col-md-4">
+                    <h3>@product.Name</h3>
+                    <p>@product.UnitPrice</p>
+                </div>
+            }
+        </div>
 </body>
 </html>

@@ -26,6 +26,7 @@ public class Product
 
     [Required]
     [Range(0, int.MaxValue)]
+    [Display(Name= "Quanidade")]
     public int Quantity{get;set;}
 
 }
