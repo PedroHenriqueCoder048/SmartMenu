@@ -27,7 +27,7 @@ namespace SmartMenu.Pages.Clients
         public Client Client { get; set; } = default!;
 
         // For more information, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostSaveAsync()
         {
             if (!ModelState.IsValid)
             {
@@ -39,5 +39,6 @@ namespace SmartMenu.Pages.Clients
 
             return RedirectToPage("/Products/Index");
         }
+
     }
 }

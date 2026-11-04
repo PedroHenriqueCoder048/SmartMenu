@@ -28,10 +28,7 @@
                 <span asp-validation-for="Client.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-success" />
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Salvar e Criar Novo" class="btn btn-info" asp-page="./"/>
+                  <input type="submit" asp-page-handler="Save" value="Cadastra" class="btn btn-success" />
             </div>
         </form>
     </div>
