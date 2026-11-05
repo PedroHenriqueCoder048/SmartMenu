@@ -18,71 +18,36 @@
 <p>
     <a asp-page="Create">Adicionar Produto</a>
 </p>
-@* <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Product[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product[0].UnitPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product[0].TypeProduct)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product[0].Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product[0].Quantity)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Product) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UnitPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TypeProduct)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
-                <a class="btn btn-warning" asp-page="./Details" asp-route-id="@item.Id">Detalhar</a> |
-                <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.Id">Deletar</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table> *@
+<form mathod="post">
 <div class="row">
-    @foreach (var product in Model.Produc)
+    @for (int i = 0 ; i < Model.Products.Count; i++)
             {
                 <div class="form-group col-md-3 mb-4 mx-1 border rounded">
                     <img src="..." class="rounded mx-auto d-block" alt="...">
-                    <h3>@product.Name</h3>
-                    <p>@product.UnitPrice</p>
-                    <p>@product.Description</p>
-                    <div class="form-group">
-                        <label clas="label-control"> Quantidade</label>
-                        <input class="form-control mb-3" type="number"/>
-                    </div>
+                    <input type="hidden" asp-for="@Model.Products[i].Id" />
+                    <h3>@Model.Products[i].Name</h3>
+                    <p class="fs-5">@Model.Products[i].Description</p>
+                    <p class="fs-5">Apenas @Model.Products[i].UnitPrice R$</p>
+                    @if (@Model.Products[i].Quantity ==  0)
+                            {
+                                <div class="form-group">
+                                    <p class="fs-5">Produto indisponível no momento</p>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="form-group">
+                                    <label class="label-control mb-3"> Quantidade</label>
+                                    <input class="form-control asp mb-3" type="number" min ="0" />
+                                </div>
+                            }
                 </div>
             }
          <div class="form-group mb-3">
-                <input type="submit" asp-page-handler="Save" value="Finalizar" class="btn btn-success" />
+                <input type="submit" id="input-quantity" asp-page-handler="Save" value="Finalizar" class="btn btn-success"/>
         </div>
     </div>
+</form>
+
 </body>
 </html>

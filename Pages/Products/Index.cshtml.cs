@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using NuGet.Protocol;
 using SmartMenu.Models;
 
 namespace SmartMenu.Pages.Products
@@ -18,18 +19,42 @@ namespace SmartMenu.Pages.Products
             _context = context;
         }
 
+        [BindProperty]
+        public List<Product> Products {get;set;} = new List<Product>(); 
+
         public async Task OnGetAsync()
         {
-            
+            Products = await _context.Products.ToListAsync();
         }
 
-        public  IActionResult OnPost(IList<Product> products)
+        public async  Task<IActionResult> OnPost()
         {
-            foreach (var product in products ){
 
-                Console.WriteLine(product.Name);
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            if (Products == null || !Products.Any())
+            {
+                Console.WriteLine("------------------------");
+                Console.WriteLine("Carrinho vazio");
+
+                return Page();
+            }
+
+            foreach (var product in Products)
+            {
+                
+                if (Request.Form.Keys)
+                {
+                    Console.WriteLine(product.ToJson());
+                }
 
             }
+
+            return RedirectToPage("/Index");
+
         }
 
     }
